@@ -38,8 +38,8 @@ export function welcomeEmail(
       </Text>
       <Text>
         Questions or ideas?{" "}
-        <Link href="https://discord.gg/RWwKa2Sn7h" style={linkStyle}>
-          Join us on Discord
+        <Link href="https://github.com/codewith-aditya/atlas-dots/issues" style={linkStyle}>
+          Open an issue on GitHub
         </Link>
         .
       </Text>

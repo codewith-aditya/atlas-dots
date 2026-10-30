@@ -3,7 +3,6 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md) | [日本語](./README.ja.md)
 
 [![GitHub stars](https://img.shields.io/github/stars/elie222/atlasdots?labelColor=black&style=for-the-badge&color=2563EB)](https://github.com/codewith-aditya/atlas-dots/stargazers)
-[![Discord コミュニティに参加](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?labelColor=black&style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/RWwKa2Sn7h)
 [![App Store で iPhone 版をダウンロード](https://img.shields.io/badge/App%20Store-Download%20for%20iPhone-black?labelColor=black&style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/app/atlasdots/id6801531099)
 [![Android APK をダウンロード](https://img.shields.io/badge/Android-Download%20APK-black?labelColor=black&style=for-the-badge&logo=android&logoColor=white)](https://github.com/codewith-aditya/atlas-dots/releases/download/android/atlasdots.apk)
 
@@ -285,5 +284,3 @@ pnpm test:e2e
 セキュリティ上の脆弱性は、公開の Issue を作成せず、[SECURITY.md](./SECURITY.md) の手順に従って報告してください。
 
 Atlas Dots は [Apache License 2.0](./LICENSE) のもとでライセンスされています。
-
-質問やアイデアは [Atlas Dots Discord コミュニティ](https://discord.gg/RWwKa2Sn7h)でお気軽にどうぞ。

@@ -296,5 +296,3 @@ request. For security vulnerabilities, follow [SECURITY.md](./SECURITY.md) inste
 issue.
 
 Atlas Dots is licensed under the [Apache License 2.0](./LICENSE).
-
-Questions and ideas are welcome in the [Atlas Dots Discord community](https://discord.gg/RWwKa2Sn7h).

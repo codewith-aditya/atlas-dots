@@ -3,7 +3,6 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md) | [日本語](./README.ja.md)
 
 [![GitHub stars](https://img.shields.io/github/stars/elie222/atlasdots?labelColor=black&style=for-the-badge&color=2563EB)](https://github.com/codewith-aditya/atlas-dots/stargazers)
-[![加入 Discord 社区](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?labelColor=black&style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/RWwKa2Sn7h)
 [![在 App Store 下载 iPhone 版](https://img.shields.io/badge/App%20Store-Download%20for%20iPhone-black?labelColor=black&style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/app/atlasdots/id6801531099)
 [![下载 Android APK](https://img.shields.io/badge/Android-Download%20APK-black?labelColor=black&style=for-the-badge&logo=android&logoColor=white)](https://github.com/codewith-aditya/atlas-dots/releases/download/android/atlasdots.apk)
 
@@ -278,5 +277,3 @@ pnpm test:e2e
 发现安全漏洞时，请按照 [SECURITY.md](./SECURITY.md) 的说明报告，勿提交公开 Issue。
 
 Atlas Dots 采用 [Apache License 2.0](./LICENSE) 许可证。
-
-欢迎在 [Atlas Dots Discord 社区](https://discord.gg/RWwKa2Sn7h)交流问题与想法。
