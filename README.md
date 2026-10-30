@@ -3,8 +3,8 @@
 Self-hosted platform for persistent AI teammates: bots with their own conversation, memory,
 routines, and computer. Runs on the web, as a desktop app, and on iOS and Android.
 
-Atlas Dots is maintained by Aditya Wakharkar and distributed under the Apache License 2.0.
-See LICENSE and NOTICE for the attribution the code carries.
+Atlas Dots is maintained by Aditya Wakharkar and distributed under the Apache License 2.0
+(see LICENSE).
 
 ## Features
 
