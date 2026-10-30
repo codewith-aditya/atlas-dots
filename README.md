@@ -1,124 +1,61 @@
-# Atlas Dots
+<p align="center">
+  <img src="./docs/readme-hero.svg" alt="Atlas Dots — persistent AI teammates you own" width="100%" />
+</p>
 
-Self-hosted platform for persistent AI teammates: bots with their own conversation, memory,
-routines, and computer. Runs on the web, as a desktop app, and on iOS and Android.
+<p align="center">
+  <a href="https://github.com/codewith-aditya/atlas-dots/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/codewith-aditya/atlas-dots?style=flat-square&labelColor=0B0B0C&color=6366F1" /></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-0B0B0C?style=flat-square&labelColor=0B0B0C" /></a>
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&labelColor=0B0B0C&logo=typescript&logoColor=white" />
+  <img alt="Web, desktop, iOS, Android" src="https://img.shields.io/badge/web%20%7C%20desktop%20%7C%20iOS%20%7C%20Android-0B0B0C?style=flat-square&labelColor=0B0B0C" />
+</p>
 
-Atlas Dots is maintained by Aditya Wakharkar and distributed under the Apache License 2.0
-(see LICENSE).
+**Atlas Dots** is a self-hosted platform for AI teammates that keep working after the chat ends.
+Each bot is a persistent identity with one visible conversation, durable memory, routines, and its
+own computer — a browser, a terminal, files and a desktop it can actually use.
+
+Run it on your machine or a server. Bring your own model and sandbox provider, or run the whole
+stack locally with Docker.
+
+> **Status:** early and moving fast. Expect sharp edges; issues and pull requests are welcome.
+
+---
+
+## What a bot is
+
+- **A teammate, not a chat.** It works in the background, comes back with a result, and asks for
+  help only when it needs information, judgment, authorization, or a password.
+- **It owns a computer.** A durable place with a browser identity, installed tools and files, so
+  work survives a restart or a sandbox being replaced.
+- **It keeps context.** Memory, routines, run history and messages live in your database — not a
+  vendor's — and stay inspectable and exportable.
 
 ## Features
 
-- Persistent bots with their own conversations, memory, routines, and history
-- Voice mode: speak replies, dictate, and call a bot. Bring your own ElevenLabs, OpenAI, Cartesia, or Fish Audio key, or use a Mac server's installed voices
-- Shared Team Computers and isolated Private computers
-- Browser, terminal, file, and graphical desktop access
-- Bots that can delegate to peer bots or short-lived subagents
-- Bring-your-own model credentials through Pi
-- App integrations through Composio or Pipedream Connect, plus user-installed Treg, remote MCP, and OpenAPI tool sources
-- Docker, E2B, Daytona, CreateOS, Boat, and trusted local-computer support
+| | |
+|---|---|
+| **Persistent bots** | Own conversation, memory, routines, history, and a place in a shared Space |
+| **Computers** | Shared Team computers or isolated Private ones: browser, terminal, files, graphical desktop, user takeover |
+| **Channels** | Talk to a bot where you already are — iMessage, WhatsApp, Telegram, Slack and Lark |
+| **Delegation** | Bots hand work to peer bots or short-lived subagents |
+| **Models** | Bring your own credentials through Pi; any OpenAI-compatible provider works |
+| **Voice** | Spoken replies, dictation and calls with your own ElevenLabs, OpenAI, Cartesia or Fish key |
+| **Integrations** | Composio or Pipedream Connect catalogs, plus your own MCP servers, OpenAPI tools and Treg |
+| **Sandboxes** | Docker, E2B, Daytona, CreateOS, Boat, Railway, or a trusted local machine |
 
-## Demo
+## Quick start
 
-https://github.com/user-attachments/assets/dccdeddb-2134-4a56-8eed-b2e591736b1c
-
-## Thanks
-
-- [PromptLayer](https://promptlayer.com/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-- [Inbox Zero](https://getinboxzero.com/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-- [ConnectorMap](https://connectormap.luinbytes.dev/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-- [CodeRabbit](https://www.coderabbit.ai/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-- [Greptile](https://www.greptile.com/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-- [Snyk](https://snyk.io/?utm_source=github&utm_medium=referral&utm_campaign=atlasdots_readme)
-
-## Stack
-
-- TypeScript
-- React 19, Vite, and Tailwind CSS
-- Electron and Expo
-- Hono and oRPC
-- PostgreSQL and Prisma
-- Better Auth
-- Graphile Worker
-- Pi
-- Docker, E2B, Daytona, CreateOS, and Boat
-- Composio, Pipedream Connect, MCP, and OpenAPI integrations
-
-## Quick start (published images)
-
-You need Docker Engine, the Compose plugin, curl, and OpenSSL. No clone or Node install.
-
-```bash
-mkdir -p atlasdots && cd atlasdots &&
-curl -fsSLO https://raw.githubusercontent.com/elie222/atlasdots/main/infra/compose/install-images.sh &&
-bash install-images.sh
-```
-
-The installer downloads the Compose files, creates `.env` with random secrets, and starts Atlas Dots.
-It preserves an existing `.env` when rerun.
-
-Open [http://127.0.0.1:5173](http://127.0.0.1:5173), create an account, and connect a model.
-Local Docker computers are on by default. Optional remote providers: `e2b`, `novita`, `daytona`, `createos`, `boat`, `boxd`, or `railway`
-with the matching API key.
-
-Default image tag is `edge` (main builds, `linux/amd64` + `linux/arm64`). Details and tags:
-[self-hosting guide](./docs/self-host.md#published-images-no-checkout).
-
-On restricted networks, override the installer download base (`ATLAS_DOTS_DOWNLOAD_BASE`), skip
-existing Compose files (`--local` / `ATLAS_DOTS_DOWNLOAD_SKIP_EXISTING`), or mirror the bootstrap
-script URL — see
-[Restricted networks / mirror downloads](./docs/self-host.md#restricted-networks--mirror-downloads).
-
-For an agent-assisted install, use [SETUP_PROMPT.md](./SETUP_PROMPT.md).
-
-## Run on a server
-
-Bots stay on when the backend runs on a server. Use the same installer on a VPS, then connect from
-the desktop app, the mobile app, or a browser.
-
-```bash
-bash install-images.sh --prepare-only
-# edit .env: SANDBOX_PROVIDER=boat (or e2b / daytona / createos) with its API key, ATLAS_DOTS_HOST=your.domain
-bash install-images.sh
-```
-
-Put HTTPS in front of port 5173; [docs/self-host-production.md](./docs/self-host-production.md#public-single-vm-deployment)
-covers the Caddy setup and host hardening. In the desktop app choose **Existing instance** and enter
-the `https://` address.
-
-Or [deploy on Railway](https://railway.com/new/template/atlasdots-template); see the [Railway setup guide](./infra/railway/README.md).
-
-## Local development (source checkout)
-
-You need Node.js 22.22.2 or newer in the 22.x line, Node.js 24.x, or Node.js 26+;
-pnpm 9; and Docker. Node.js 23.x and 25.x are not supported.
+Source checkout is the path that works today. You need Node.js 22.22.2+ (22.x), 24.x or 26+,
+pnpm 9, and Docker.
 
 ```bash
 git clone https://github.com/codewith-aditya/atlas-dots.git
-cd atlasdots
+cd atlas-dots
 cp .env.example .env
 ```
 
-Set `POSTGRES_PASSWORD` and `POSTGRES_APP_PASSWORD` to two values from `openssl rand -hex 16`,
-then put them in `DATABASE_MIGRATION_URL` and `DATABASE_URL`. The app connects as its own
-`atlasdots_app` login, which row-level security applies to; migrations run as the owner
-([database roles](docs/self-host-configuration.md#database-roles)). Set `BETTER_AUTH_SECRET`, `ENCRYPTION_KEY`, and `SCREEN_PROXY_SECRET` to
-independent long random values. Docker sandboxes also need a dedicated
-`SANDBOX_SUPERVISOR_TOKEN`. You can also set `OPENROUTER_API_KEY`, or connect a supported
-model provider during onboarding.
-
-For host-side development with Docker Desktop, set `SANDBOX_CONTROL_VIA_LOOPBACK=true`
-in `.env`. The supervisor discovers Docker Desktop's user socket automatically;
-`DOCKER_HOST` or `DOCKER_SOCKET` can override it for another Docker runtime.
-
-Managed app catalogs are optional. Set `COMPOSIO_API_KEY` for Composio, or the
-`PIPEDREAM_CLIENT_ID`, `PIPEDREAM_CLIENT_SECRET`, and `PIPEDREAM_PROJECT_ID` trio for Pipedream
-Connect. Users can add an HTTPS MCP server, Treg endpoint, or OpenAPI JSON document from
-**Integrations** without enabling either managed catalog. Connector credentials are encrypted on the
-server and are never returned by the API.
-
-Treg is usage-metered. Self-hosters supply their own Treg token; operators embedding Treg in a
-hosted product should review [Treg's integration terms](https://treg.to/integrate.md), which require
-a written agreement for hosted resale.
+Set `POSTGRES_PASSWORD` and `POSTGRES_APP_PASSWORD` (two `openssl rand -hex 16` values), put them in
+`DATABASE_MIGRATION_URL` and `DATABASE_URL`, then set `BETTER_AUTH_SECRET`, `ENCRYPTION_KEY` and
+`SCREEN_PROXY_SECRET` to independent long random values.
 
 ```bash
 pnpm install
@@ -126,173 +63,86 @@ pnpm sandbox:build
 pnpm dev
 ```
 
-`pnpm dev` uses the Postgres in `DATABASE_URL` when it accepts a connection. Otherwise it starts a
-local `atlasdots-dev-postgres` container with Docker, and every checkout reuses that one. It applies
-migrations and generates the Prisma client before starting. A branch that adds migrations main
-doesn't have gets its own database on the same server, copied from the shared one when possible,
-so unmerged schema changes stay out of it. When the default ports are taken, for example by
-another git worktree, it moves to the next free block and prints the URL. Set `WEB_PORT` and
-`API_PORT` to choose ports yourself.
+Open [http://127.0.0.1:5173](http://127.0.0.1:5173), create an account, connect a model, create a
+bot. `pnpm dev` starts a local Postgres container when `DATABASE_URL` is not reachable, applies
+migrations, and moves to free ports when the defaults are taken.
 
-To run Postgres from the Compose file instead, start it with the `postgres-host` overlay, which
-publishes loopback `127.0.0.1:5433`, and point `DATABASE_URL` and `DATABASE_MIGRATION_URL` at it:
+Published images (`ghcr.io/codewith-aditya/atlas-dots/app` and `.../computer`) are not out yet. The
+compose files already read `ATLAS_DOTS_IMAGE` and `ATLAS_DOTS_COMPUTER_IMAGE`, so a mirror or a
+local build works the same way.
+
+## Run it on a server
+
+Bots stay running when the backend lives on a server; connect from the desktop app, the mobile app,
+or a browser.
 
 ```bash
-docker compose --env-file .env \
-  -f infra/compose/docker-compose.yml \
-  -f infra/compose/docker-compose.postgres-host.yml \
-  up postgres -d
+git clone https://github.com/codewith-aditya/atlas-dots.git
+cd atlas-dots
+cp .env.example .env          # set ATLAS_DOTS_HOST=your.domain and your secrets
+docker compose --env-file .env -f infra/compose/docker-compose.yml up -d --build
 ```
 
-Use a URI-safe `POSTGRES_PASSWORD` (`openssl rand -hex 16`). An existing `pgdata` volume keeps the
-user, password, and database from first init, so keep those values in `.env`, or change them in
-place with `ALTER ROLE` / rename. Recreate the volume only after a backup (or when the data is
-disposable); `docker compose down -v` deletes all Postgres state.
-
-Open the printed URL ([http://127.0.0.1:5173](http://127.0.0.1:5173) by default), create an account, connect a model, and create
-your first bot.
-
-For deployment, provider selection, backups, and upgrades, see the
-[self-hosting guide](./docs/self-host.md), [production deployment](./docs/self-host-production.md),
-[backup and restore](./docs/self-host-backups.md), and [upgrading](./docs/self-host-upgrading.md).
-
-To use CreateOS, set `SANDBOX_PROVIDER=createos` and `CREATEOS_SANDBOX_API_KEY`.
-Optional `CREATEOS_SANDBOX_BASE_URL`, `CREATEOS_SANDBOX_SHAPE`, and
-`CREATEOS_SANDBOX_ROOTFS` default to `https://api.sb.createos.sh`, `s-2vcpu-2gb`,
-and `desktop:1`.
-
-To use Railway computers, set `SANDBOX_PROVIDER=railway`, `RAILWAY_API_TOKEN`
-and `RAILWAY_ENVIRONMENT_ID` on the API and worker. Choose the sandbox environment
-explicitly; Railway's automatic environment ID identifies the hosted app's environment.
-Use the narrowest Railway API token that works: prefer a project token if sufficient
-for sandbox operations and supported by the client's authentication. This provider
-currently uses bearer authentication, so use a team/workspace token rather than a
-personal account token.
-The live screen and desktop require `PRIVATE` networking so Railway's public domain
-can serve the screen. Computers use this mode and can reach other services in the
-same Railway project/environment, as well as the public internet. We recommend a
-dedicated Railway project (or at least a separate environment) for sandboxes,
-separate from the app and database. Recreate existing `ISOLATED` computers before use.
-The desktop is installed on first start. Stopping a computer saves its portable
-home and destroys the sandbox; the next start restores that home in a new sandbox.
-Railway sandbox usage is metered.
-New computers start in Railway's default region. Set `RAILWAY_SANDBOX_REGION` (for example
-`asia-southeast1-eqsg3a`) to keep them near the API; a running computer moves on its next start.
-Workspace exports reject files above 64 MiB without truncating them. Set `RAILWAY_MAX_WORKSPACE_FILE_BYTES` to change this limit.
+Put HTTPS in front of port 5173 — [production deployment](./docs/self-host-production.md) covers
+Caddy and host hardening. Provider selection, backups and upgrades are in the
+[self-hosting guide](./docs/self-host.md), [configuration](./docs/self-host-configuration.md),
+[backups](./docs/self-host-backups.md) and [upgrading](./docs/self-host-upgrading.md).
 
 ## Desktop and mobile
 
-The Electron and Expo apps are clients of the same Atlas Dots API used by the web app.
-
-With the development stack running, launch Electron with:
+The Electron and Expo apps are clients of the same API as the web app.
 
 ```bash
 pnpm --filter @atlas-dots/desktop dev
 ```
 
-On first run the desktop app asks whether to run Atlas Dots on this computer or connect to an existing
-server. **This computer** installs and starts the published images with Docker Compose (the same
-files as `infra/compose/install-images.sh`) under the app's data directory, so Docker Desktop,
-OrbStack, or Docker Engine must be installed; the app links to them when it is not. Installed
-builds pin the image tag to their own version; unpackaged builds pull `edge`. Developers running
-`pnpm dev` should pick **Existing instance** with `http://127.0.0.1:5173` instead. Public servers
-must use HTTPS; HTTP is accepted only for loopback and private LAN addresses (not link-local). The
-app verifies Atlas Dots's health endpoint before saving, and later launches go straight to that
-instance. The stack keeps running after the app quits; **Stop Local Stack** in the application
-menu turns it off.
+On first run the desktop app asks whether to run Atlas Dots on this computer or connect to an
+existing server. Public servers need HTTPS; HTTP is accepted for loopback and private LAN
+addresses. Mobile build and release steps are in [docs/mobile-release.md](./docs/mobile-release.md).
 
-On Linux the desktop app ships as an AppImage, which needs FUSE 2 (`libfuse.so.2`). Distributions
-that only include FUSE 3, such as Fedora Silverblue or Ubuntu 24.04, show
-`dlopen(): error loading libfuse.so.2`. Install the FUSE 2 library (`fuse-libs` on Fedora,
-`libfuse2t64` on Ubuntu 24.04, `libfuse2` on older Ubuntu and Debian), or run the AppImage without
-FUSE:
+The web UI ships in English, German, Korean, Turkish, Hindi, Portuguese (BR), Chinese (Simplified and
+Traditional), Spanish, Russian, French, Hebrew, Dutch and Japanese under **Settings → Language**.
+
+## Repository layout
+
+```
+apps/
+  api/       Hono + oRPC backend: auth, jobs, realtime
+  web/       React web client
+  desktop/   Electron shell around the web client
+  mobile/    Expo app for iOS and Android
+  worker/    Background job runner
+  www/       Marketing site (Astro)
+packages/
+  adapters/  Providers: models, sandboxes, messaging, integrations, memory, voice
+  core/      Shared domain logic
+  contracts/ Zod schemas and the typed RPC surface
+  db/        Prisma schema, migrations, row-level security
+  ui-web/    shadcn-based component library
+infra/       Compose files, sandbox images, systemd units
+```
+
+Stack: TypeScript, React 19 + Vite + Tailwind, Electron, Expo, Hono + oRPC, PostgreSQL + Prisma,
+Better Auth, Graphile Worker.
 
 ```bash
-chmod +x Atlas Dots-*.AppImage
-./Atlas Dots-*.AppImage --appimage-extract-and-run
+pnpm lint      # biome
+pnpm check     # tsc across the workspace
+pnpm test      # unit tests
 ```
-
-**This computer** looks for the `docker` CLI and does not detect Podman. To try another
-Docker-compatible CLI that supports the `compose` commands, set `ATLAS_DOTS_DOCKER_BINARY` to its path
-before starting the app.
-
-Use **Change Atlas Dots Server…** in the application menu to reconnect. Closing that window without
-saving returns to the previous instance. For development automation, set `ATLAS_DOTS_WEB_URL` to point
-the shell somewhere else without changing the saved instance, or `ATLAS_DOTS_FORCE_SETUP=1` to run
-setup again.
-
-Mobile build and release instructions live in [docs/mobile-release.md](./docs/mobile-release.md).
-
-## UI language
-
-The web (and Electron-hosted) UI supports English, Deutsch, 한국어, Türkçe, हिन्दी,
-Português (Brasil), 简体中文, 繁體中文, Español, Русский, Français, עברית, Nederlands, and 日本語 under
-**Settings → Language**. The Expo app ships English, 简体中文, 繁體中文, Русский, Deutsch,
-Nederlands, and 日本語 catalogs, and **Account → Language** lists all seven. A device language or
-`EXPO_PUBLIC_DEFAULT_UI_LOCALE` still selects the starting catalog before a saved choice.
-The marketing
-homepage (`apps/www`) is available in en/de/ko/zh/ja via footer language links (`/`, `/de/`,
-`/ko/`, `/zh/`, `/ja/`); other marketing pages stay English. The Russian marketing homepage and
-native Electron setup/menu remain separate follow-up work.
-
-## Development
-
-```text
-apps/       web, api, worker, desktop, mobile, and public website
-packages/   domain, contracts, persistence, adapters, UI, and test tooling
-infra/      local services and computer images
-docs/       architecture, operations, and release guides
-```
-
-Common checks:
-
-```bash
-pnpm lint
-pnpm check
-pnpm test
-pnpm test:integration
-pnpm test:e2e
-```
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for the development workflow and test matrix.
 
 ## Documentation
 
-- [Self-hosting](./docs/self-host.md)
-- [Self-host configuration](./docs/self-host-configuration.md)
-- [Self-host secrets](./docs/self-host-secrets.md)
-- [Sign-in and accounts](./docs/self-host-accounts.md)
-- [Models](./docs/self-host-models.md)
-- [Tools and integrations](./docs/self-host-integrations.md)
-- [Computer providers](./docs/self-host-sandbox-providers.md)
-- [Docker computers](./docs/self-host-docker-computers.md)
-- [Storage and encryption](./docs/self-host-storage.md)
-- [Production deployment](./docs/self-host-production.md)
-- [Backup and restore](./docs/self-host-backups.md)
-- [Upgrading](./docs/self-host-upgrading.md)
-- [Logs and monitoring](./docs/self-host-observability.md)
-- [Apps and clients](./docs/self-host-clients.md)
-- [Billing](./docs/self-host-billing.md)
-- [Computer runtime and isolation](./docs/computer-runtime.md)
-- [Desktop releases](./docs/desktop-release.md)
-- [Mobile releases](./docs/mobile-release.md)
-- [Performance testing](./docs/performance.md)
-- [Manage the bots it creates](./docs/fleet-management.md)
-
-## How Atlas Dots compares
-
-- [Grok Bot](https://atlasdots.local/grok-bot-alternative/)
-- [Muse](https://atlasdots.local/muse-alternative/)
-- [Dots](https://atlasdots.local/dots-alternative/)
-- [Instinct](https://atlasdots.local/instinct-alternative/)
-- [OpenClaw](https://atlasdots.local/openclaw-alternative/)
-- [Hermes Agent](https://atlasdots.local/hermes-alternative/)
-- [All comparisons](https://atlasdots.local/alternatives/)
+- [Getting started](./docs/getting-started.md) · [Bots and chats](./docs/bots-and-chats.md)
+- [Computers](./docs/computer.md) · [Computer runtime](./docs/computer-runtime.md) · [Groups](./docs/groups.md)
+- [Integrations](./docs/integrations.md) · [Build a plugin](./docs/build-a-plugin.md) · [Memory](./docs/memory.md)
+- [Self-hosting](./docs/self-host.md) · [Desktop app](./docs/desktop-app.md) · [Import an agent](./docs/import-an-agent.md)
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull
-request. For security vulnerabilities, follow [SECURITY.md](./SECURITY.md) instead of filing a public
-issue.
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request. For security issues use
+[SECURITY.md](./SECURITY.md), not a public issue.
 
-Atlas Dots is licensed under the [Apache License 2.0](./LICENSE).
+## License
+
+Apache License 2.0 — see [LICENSE](./LICENSE).

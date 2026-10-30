@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Atlas Dots — persistent AI teammates you own">
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="18%" r="80%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#6366F1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#FFFFFF" fill-opacity="0.09"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="420" fill="#0B0B0C"/>
+  <rect width="1200" height="420" fill="url(#dots)"/>
+  <rect width="1200" height="420" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1199" height="419" fill="none" stroke="url(#line)"/>
+
+  <!-- orbit: a globe drawn with dots -->
+  <g transform="translate(935 210)" fill="none" stroke="#FFFFFF" stroke-opacity="0.20">
+    <circle r="120"/>
+    <ellipse rx="120" ry="46"/>
+    <ellipse rx="46" ry="120"/>
+  </g>
+  <g transform="translate(935 210)" fill="#FFFFFF">
+    <circle cx="0" cy="-120" r="4" fill-opacity="0.9"/>
+    <circle cx="120" cy="0" r="4" fill-opacity="0.9"/>
+    <circle cx="0" cy="120" r="4" fill-opacity="0.55"/>
+    <circle cx="-120" cy="0" r="4" fill-opacity="0.55"/>
+    <circle cx="85" cy="-85" r="3" fill-opacity="0.35"/>
+    <circle cx="85" cy="85" r="3" fill-opacity="0.35"/>
+    <circle cx="-85" cy="-85" r="3" fill-opacity="0.35"/>
+    <circle cx="-85" cy="85" r="3" fill-opacity="0.35"/>
+    <circle cx="0" cy="0" r="5" fill="#818CF8"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">
+    <text x="72" y="132" fill="#FFFFFF" font-size="64" font-weight="700" letter-spacing="-1.5">Atlas Dots</text>
+    <text x="74" y="180" fill="#A1A1AA" font-size="22">Persistent AI teammates you own.</text>
+    <text x="74" y="212" fill="#71717A" font-size="19">Their own conversation, memory, routines and computer —</text>
+    <text x="74" y="240" fill="#71717A" font-size="19">on the web, desktop, iOS and Android.</text>
+
+    <g font-size="14" fill="#E4E4E7">
+      <rect x="72" y="286" rx="16" width="146" height="32" fill="#18181B" stroke="#27272A"/>
+      <text x="94" y="307">self-hosted</text>
+
+      <rect x="230" y="286" rx="16" width="196" height="32" fill="#18181B" stroke="#27272A"/>
+      <text x="252" y="307">bring your own model</text>
+
+      <rect x="438" y="286" rx="16" width="128" height="32" fill="#18181B" stroke="#27272A"/>
+      <text x="460" y="307">Apache-2.0</text>
+
+      <rect x="578" y="286" rx="16" width="152" height="32" fill="#18181B" stroke="#27272A"/>
+      <text x="600" y="307">TypeScript</text>
+    </g>
+  </g>
+</svg>
