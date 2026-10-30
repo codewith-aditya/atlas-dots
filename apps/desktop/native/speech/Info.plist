@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Linked into the helper binary: macOS refuses speech recognition to a process without these. -->
+<plist version="1.0">
+  <dict>
+    <key>CFBundleIdentifier</key>
+    <string>dev.atlasdots.desktop.speech</string>
+    <key>CFBundleName</key>
+    <string>Atlas Dots</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Atlas Dots turns what you say into text for dictation and voice calls with your bots.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Atlas Dots uses the microphone for dictation and voice calls with your bots.</string>
+  </dict>
+</plist>

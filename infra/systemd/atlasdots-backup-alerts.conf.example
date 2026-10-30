@@ -1,0 +1,9 @@
+# Optional drop-in: /etc/systemd/system/atlasdots-backup.service.d/alerts.conf
+[Unit]
+OnFailure=atlasdots-backup-alert.service
+
+[Service]
+ExecStartPost=-/usr/local/sbin/atlasdots-host-alert backup-failure ""
+ReadWritePaths=/var/lib/atlasdots/alerts
+StateDirectory=atlasdots/alerts
+StateDirectoryMode=0700

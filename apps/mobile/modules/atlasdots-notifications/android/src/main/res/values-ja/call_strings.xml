@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="atlasdots_call_channel">通話中</string>
+  <string name="atlasdots_call_title">Atlas Dotsの通話</string>
+  <string name="atlasdots_call_text">マイクがオンです</string>
+</resources>

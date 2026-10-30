@@ -1,0 +1,29 @@
+appId: com.atlasdots.app
+---
+- runFlow: launch-app.yaml
+- runFlow:
+    when:
+      visible: "Sign up for Atlas Dots"
+    commands:
+      - tapOn: "Sign in"
+- extendedWaitUntil:
+    visible: "Sign in to Atlas Dots"
+    timeout: 15000
+- tapOn: "Email"
+- inputText: ${ATLAS_DOTS_ACTIVE_EMAIL}
+- tapOn: "Password"
+- inputText: ${ATLAS_DOTS_SCREENSHOT_PASSWORD}
+- hideKeyboard
+- tapOn: "Sign in"
+- tapOn:
+    text: "Not Now"
+    optional: true
+- tapOn:
+    text: "Don’t allow"
+    optional: true
+- tapOn:
+    text: "Don't allow"
+    optional: true
+- extendedWaitUntil:
+    visible: "Account"
+    timeout: 40000

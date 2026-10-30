@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerabilities
+    url: https://github.com/codewith-aditya/atlas-dots/blob/main/SECURITY.md
+    about: Report security issues to security@atlasdots.com — do not open a public issue.
+  - name: User support
+    url: mailto:support@atlasdots.com
+    about: Questions about using Atlas Dots or self-hosting help.
+  - name: Maintainer
+    url: mailto:elie@atlasdots.com
+    about: Reach the maintainer directly.

@@ -1,0 +1,31 @@
+{
+  "name": "@atlas-dots/testkit",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --root ../.. packages/testkit/src"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.5",
+    "@atlas-dots/adapter-kit": "workspace:*",
+    "@atlas-dots/adapters": "workspace:*",
+    "@atlas-dots/contracts": "workspace:*",
+    "@atlas-dots/core": "workspace:*",
+    "@atlas-dots/db": "workspace:*",
+    "@testcontainers/postgresql": "12.2.1",
+    "pngjs": "7.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@atlas-dots/api": "workspace:*",
+    "@atlas-dots/sandbox-supervisor": "workspace:*",
+    "@types/pngjs": "6.0.5",
+    "typescript": "7.0.2",
+    "vitest": "4.1.12"
+  }
+}
